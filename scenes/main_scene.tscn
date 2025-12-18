@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cexla87oebih7"]
+
+[ext_resource type="Script" uid="uid://b07cfa1x2juty" path="res://scripts/main.gd" id="1_pw63i"]
+[ext_resource type="PackedScene" uid="uid://cs16vnffufiv" path="res://scenes/player.tscn" id="1_w2twt"]
+
+[node name="MainScene" type="Node2D"]
+script = ExtResource("1_pw63i")
+
+[node name="Player" parent="." instance=ExtResource("1_w2twt")]
+
+[node name="Attacks" type="Node2D" parent="."]
+
+[connection signal="shoot" from="Player" to="." method="_on_player_shoot"]
